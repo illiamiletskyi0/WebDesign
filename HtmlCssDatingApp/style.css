@@ -1,0 +1,128 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #FFFFFF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    max-width: 414px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+}
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px 40px;
+}
+.illustration {
+    width: 100%;
+    max-width: 375px;
+    height: 250px;
+    margin-bottom: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.illustration img {
+    max-width: 100%;
+    height: auto;
+}
+.button-primary {
+    background: #FF5F5F;
+    color: #FFFFFF;
+    border: none;
+    padding: 17px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 5%;
+    transition: all 0.3s ease;
+    margin-bottom: 35px;
+    white-space: nowrap;
+}
+.description {
+    color: #5A5A64;
+    line-height: 1.65;
+    font-size: 11px;
+    text-align: center;
+    padding: 0 5px;
+    max-width: 340px;
+    font-weight: 400;
+}
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 45px 35px;
+}
+.skip-button {
+    background: #F5F5FF;
+    border: none;
+    color: #32323C;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    padding: 10px 21px;
+    border-radius: 5px;
+}
+.pagination {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 1px;
+    background-color: #F5F5FF;
+}
+.dot.active {
+    background: #FF5F5F;
+}
+.next-button {
+    background: #FF5F5F;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 21px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+}
+@media (max-width: 480px) {
+    .content {
+        padding: 50px 25px 30px;
+    }
+    .illustration {
+        margin-bottom: 60px;
+    }
+    .description {
+        font-size: 13px;
+    }
+    .navigation {
+        padding: 20px 25px 25px;
+    }
+}
