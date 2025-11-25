@@ -6,9 +6,9 @@
       </div>
 
       <button
-        class="bg-[#FF5F5F] text-white px-6 py-4 text-lg font-medium rounded-md uppercase tracking-wide mb-9"
+        class="w-[229px] bg-[#FF5F5F] text-white px-6 py-4 text-lg font-medium rounded-md uppercase tracking-wide mb-9"
       >
-        Meet New People
+        {{ text[currentIndex] }}
       </button>
 
       <p class="text-[#5A5A64] leading-[1.65] text-[11px] text-center px-1 max-w-[340px]">
@@ -51,10 +51,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import img1 from '../img/two-phones-were-floating-two-people-came-out-of-the-phone-and-talked-directly-to-each-other-sending-heart-emoji-vector.png'
-import img3 from '../img/bdfffbdc-fce8-472a-9250-b26f570ece3a.png'
-import img2 from '../img/349b3421-8090-4d66-b942-92ee3bed3d05.png'
+import img2 from '../img/bdfffbdc-fce8-472a-9250-b26f570ece3a.png'
+import img3 from '../img/349b3421-8090-4d66-b942-92ee3bed3d05.png'
 
 const images: string[] = [img1, img2, img3]
+const text: string[] = ['Meet New People', 'CHAT WITH EASE', 'FIND YOUR MATCH']
 
 const currentIndex = ref<number>(0)
 
