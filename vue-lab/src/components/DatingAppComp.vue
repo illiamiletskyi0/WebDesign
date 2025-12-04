@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-[414px] w-full mx-auto h-[90vh] flex flex-col">
+  <div v-if="!showRegLogin" class="max-w-[414px] w-full mx-auto h-[90vh] flex flex-col">
     <main class="flex-1 flex flex-col items-center px-6 pt-10 pb-6">
       <div class="w-full max-w-[375px] h-[30vh] mb-20 flex items-center justify-center rounded-lg">
         <img :src="images[currentIndex]" alt="Meet New People" class="max-w-full h-auto" />
@@ -22,6 +22,7 @@
 
     <footer class="relative w-full flex items-center justify-between px-11 py-8">
       <button
+        @click="showRegLogin = true"
         class="cursor-pointer bg-gray-100 text-[#32323C] text-xs font-semibold uppercase tracking-wide px-4 py-2 rounded"
       >
         Skip
@@ -47,9 +48,11 @@
       </button>
     </footer>
   </div>
+  <RegLoginComp v-else />
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
+import RegLoginComp from './RegLoginComp.vue'
 import img1 from '../img/two-phones-were-floating-two-people-came-out-of-the-phone-and-talked-directly-to-each-other-sending-heart-emoji-vector.png'
 import img2 from '../img/bdfffbdc-fce8-472a-9250-b26f570ece3a.png'
 import img3 from '../img/349b3421-8090-4d66-b942-92ee3bed3d05.png'
@@ -58,8 +61,10 @@ const images: string[] = [img1, img2, img3]
 const text: string[] = ['Meet New People', 'CHAT WITH EASE', 'FIND YOUR MATCH']
 
 const currentIndex = ref<number>(0)
+const showRegLogin = ref<boolean>(false)
 
 function nextImage(): void {
+  if (currentIndex.value == 2) showRegLogin.value = true
   currentIndex.value = (currentIndex.value + 1) % images.length
 }
 function goToImage(index: number): void {
